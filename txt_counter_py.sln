@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "txt_counter_py", "txt_counter_py.pyproj", "{49736706-E53D-43D2-B90F-2FADA59A47B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49736706-E53D-43D2-B90F-2FADA59A47B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49736706-E53D-43D2-B90F-2FADA59A47B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD257B87-883C-4BA1-9DF3-F2E76E3A293A}
+	EndGlobalSection
+EndGlobal
