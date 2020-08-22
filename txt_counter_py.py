@@ -1,16 +1,7 @@
 import glob
 
-def count_files(root_dir, ext):
-	return sum(1 for _ in glob.iglob(root_dir + "**/*." + ext, recursive=True))
-
-
-def count_for_all_in(path, ext, count_f):
-	counter = 0
-	for filename in glob.iglob(path + "**/*." + ext, recursive=True):
-		with open(filename) as f:
-			counter += count_f(f)
-	return counter
-
+count_for_all_in = lambda path, ext, count_f: (sum(([(count_f(f), f.close()) for f in [open(filename)]][0][0]) for filename in glob.iglob(path + "**/*." + ext, recursive=True)))
+count_files = lambda root_dir, ext: (sum(1 for _ in glob.iglob(root_dir + "**/*." + ext, recursive=True)))
 count_for_all_lines = lambda path, ext: (count_for_all_in(path, ext, lambda f: (sum(1 for line in f if line.rstrip() and line[0] != "#"))))
 count_for_all_characters = lambda path, ext: (count_for_all_in(path, ext, lambda f: (len(f.read()))))
 count_for_all_word_appearance = lambda path, word: (count_for_all_in(path, "*", lambda f: (sum((lambda _: 1)(print(f)) for line in f if word in line))))
