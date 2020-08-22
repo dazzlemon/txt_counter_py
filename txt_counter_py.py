@@ -11,18 +11,9 @@ def count_for_all_in(path, ext, count_f):
 			counter += count_f(f)
 	return counter
 
-
-def count_for_all_lines(path, ext):
-	return count_for_all_in(path, ext, lambda f: (sum(1 for line in f if line.rstrip() and line[0] != "#")))
-
-
-def count_for_all_characters(path, ext):
-	return count_for_all_in(path, ext, lambda f: (len(f.read())))
-
-
-def count_for_all_word_appearance(path, word):
-	return count_for_all_in(path, "*", lambda f: (sum((lambda _: 1)(print(f)) for line in f if word in line)))
-
+count_for_all_lines = lambda path, ext: (count_for_all_in(path, ext, lambda f: (sum(1 for line in f if line.rstrip() and line[0] != "#"))))
+count_for_all_characters = lambda path, ext: (count_for_all_in(path, ext, lambda f: (len(f.read()))))
+count_for_all_word_appearance = lambda path, word: (count_for_all_in(path, "*", lambda f: (sum((lambda _: 1)(print(f)) for line in f if word in line))))
 
 path = "/media/dazzlemon/data/github/bizzare/production/bizzare_v2/src/"#"D:\\data\\github\\bizzare\\production\\bizzare_v2\\src\\"
 gd = "gd"
