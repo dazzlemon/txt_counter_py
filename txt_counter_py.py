@@ -21,10 +21,7 @@ def count_for_all_characters(path, ext):
 
 
 def count_for_all_word_appearance(path, word):
-	def count_word_in(f): 
-		for line in f: word in line and print(f)#can be lambda if i delete this line, but i won't
-		return sum(1 for line in f if word in line)
-	return count_for_all_in(path, "*", count_word_in)
+	return count_for_all_in(path, "*", lambda f: (sum((lambda _: 1)(print(f)) for line in f if word in line)))
 
 
 path = "/media/dazzlemon/data/github/bizzare/production/bizzare_v2/src/"#"D:\\data\\github\\bizzare\\production\\bizzare_v2\\src\\"
